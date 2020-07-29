@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fugitivo</title>
+</head>
+
+<body>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			color: black;
+		}
+
+		body {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: black;
+		}
+
+		#Canvas {
+			border: 1px solid red;
+			box-shadow: 0 0 20px red;
+		}
+	</style>
+	<canvas id="Canvas" width="800px" height="600px"></canvas>
+
+	<script>
+		const canvas = document.getElementById("Canvas");
+		const canvasWidth = canvas.width;
+		const canvasHeight = canvas.height;
+		const ctx = canvas.getContext("2d");
+	</script>
+
+	<script src="./Jogador.js"></script>
+	<script src="./Inimigo.js"></script>
+	<script src="./Moeda.js"></script>
+	<script src="./script.js"></script>
+</body>
+
+</html>
