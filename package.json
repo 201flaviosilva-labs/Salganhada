@@ -1,0 +1,20 @@
+{
+  "name": "Nome",
+  "version": "1.0.0",
+  "description": "Descrição",
+  "main": "Inimigo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/201flaviosilva/Nome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/201flaviosilva/Nome/issues"
+  },
+  "homepage": "https://github.com/201flaviosilva/Nome#readme"
+}
