@@ -10,5 +10,7 @@ class Moeda {
 
 			} while (this.X < 0);
 		} while (this.Y < 0);
+		this.sprite = new Image();
+		this.sprite.src = "../Assets/Coin.png";
 	}
 }

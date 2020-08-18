@@ -27,6 +27,7 @@ div.Demo {
 }
 
 #Canvas {
-  border: 1px solid red;
-  box-shadow: 0 0 20px red;
+  border: 1px solid green;
+  box-shadow: 0 0 20px green;
+  background: url("../Assets/Aquarium.png");
 }
