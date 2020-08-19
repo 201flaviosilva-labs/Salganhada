@@ -15,9 +15,11 @@ function desenhar() {
 	ctx.fillText(`Pontos: ${jogador.Pontos}`, canvasWidth / 2 - 25, 20);
 
 	ctx.fillStyle = "red";
-	for (let i of inimigosArr) {
-		ctx.fillRect(i.X, i.Y, i.Width, i.Height);
-		ctx.drawImage(i.sprite, i.X, i.Y, i.Width, i.Height);
+	for (let i = 0; i < inimigosArr.length; i++) {
+		inimigosArr[i].mover();
+		if (inimigosArr[i].X < 0) inimigosArr.splice(i, 1);
+		ctx.fillRect(inimigosArr[i].X, inimigosArr[i].Y, inimigosArr[i].Width, inimigosArr[i].Height);
+		ctx.drawImage(inimigosArr[i].sprite, inimigosArr[i].X, inimigosArr[i].Y, inimigosArr[i].Width, inimigosArr[i].Height);
 	}
 
 	ctx.fillStyle = "yellow";
@@ -27,15 +29,8 @@ function desenhar() {
 	ctx.fillStyle = "white";
 	ctx.fillRect(jogador.X, jogador.Y, jogador.Width, jogador.Height);
 	ctx.drawImage(jogador.sprite, jogador.X, jogador.Y, jogador.Width, jogador.Height);
-}
-
-setInterval(() => {
-	for (let i = 0; i < inimigosArr.length; i++) {
-		inimigosArr[i].mover();
-		if (inimigosArr[i].X < 0) inimigosArr.splice(i, 1);
-	}
 	colisao();
-}, 50);
+}
 
 function colisao() {
 	for (let i = 0; i < inimigosArr.length; i++) {
@@ -49,6 +44,7 @@ function colisao() {
 				jogador.Y + jogador.Height < inimigosArr[i].Y + inimigosArr[i].Height)
 		) {
 			jogador.Pontos = 0;
+			inimigosArr.splice(i, 1);
 			canvas.style.border = "1px solid red";
 			canvas.style.boxShadow = "0 0 20px red";
 		}
@@ -78,6 +74,4 @@ function mudarCorBorder() {
 	canvas.style.boxShadow = "0 0 20px green";
 }
 
-setInterval(() => {
-	if (canvas.style.border !== "1px solid green") mudarCor = setTimeout(() => mudarCorBorder(), 1000);
-}, 100);
+setInterval(() => { if (canvas.style.border !== "1px solid green") mudarCor = setTimeout(() => mudarCorBorder(), 1000); }, 100);
