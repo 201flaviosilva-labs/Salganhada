@@ -1,11 +1,11 @@
 document.addEventListener("keydown", (e) => jogador.mudarDirecao(e));
 class Jogador {
 	constructor() {
-		this.Width = 10;
-		this.Height = 10;
+		this.Width = 20;
+		this.Height = 20;
 		this.X = canvasWidth / 2 + this.Width / 2;
 		this.Y = canvasHeight / 2 + this.Height / 2;
-		this.Velocidade = 5;
+		this.Velocidade = 10;
 		this.Pontos = 0;
 		this.Direcao = "";
 		this.sprite = new Image();
