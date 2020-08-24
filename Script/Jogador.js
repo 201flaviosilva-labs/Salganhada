@@ -14,10 +14,10 @@ class Jogador {
 
 	mudarDirecao(e) {
 		const keyCode = e.keyCode;
-		if (keyCode === 37) this.Direcao = "Esquerda";
-		if (keyCode === 39) this.Direcao = "Direita";
-		if (keyCode === 38) this.Direcao = "Cima";
-		if (keyCode === 40) this.Direcao = "Baixo";
+		if (keyCode === 37 || keyCode === 65) this.Direcao = "Esquerda";
+		if (keyCode === 39 || keyCode === 68) this.Direcao = "Direita";
+		if (keyCode === 38 || keyCode === 87) this.Direcao = "Cima";
+		if (keyCode === 40 || keyCode === 83) this.Direcao = "Baixo";
 	}
 
 	mover() {
