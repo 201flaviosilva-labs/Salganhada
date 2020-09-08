@@ -1,4 +1,4 @@
 # Nome
  Descrição
 
-[Site](https://nome.netlify.app/)
+[Jogar](https://nome.netlify.app/)
