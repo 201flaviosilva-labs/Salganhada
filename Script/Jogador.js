@@ -25,7 +25,7 @@ class Jogador {
 		}
 
 		// Jogador 2
-		if (this.nome === "Jogador2" || localStorage.numJogadores === 1) {
+		if (this.nome === "Jogador2" || localStorage.numJogadores == 1) {
 			if (keyCode === 37) this.Direcao = "Esquerda";
 			if (keyCode === 39) this.Direcao = "Direita";
 			if (keyCode === 38) this.Direcao = "Cima";
