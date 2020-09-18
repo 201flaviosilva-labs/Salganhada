@@ -13,15 +13,19 @@ function desenhar() {
 	ctx.font = "18px monospace";
 	// ctx.fillStyle = "rgb(0,0,255, 0.7)";
 	for (let i = 0; i < jogadors.length; i++) {
+		const pontos = jogadors[i].Pontos;
 		if (jogadors[i].nome === "Jogador1") {
 			ctx.fillStyle = "red";
-			ctx.fillText(`Pontos: ${jogadors[i].Pontos}`, canvasWidth / 3 - 25, 20);
+			ctx.fillText(`Pontos: ${pontos}`, canvasWidth / 3 - 25, 20);
 		}
 		if (jogadors[i].nome === "Jogador2") {
 			ctx.fillStyle = "green";
-			ctx.fillText(`Pontos: ${jogadors[i].Pontos}`, canvasWidth / 3 * 2 - 25, 20);
+			ctx.fillText(`Pontos: ${pontos}`, canvasWidth / 3 * 2 - 25, 20);
 		}
+		if (localStorage.pontos < pontos) localStorage.pontos = pontos;
 	}
+	ctx.fillStyle = "yellow";
+	ctx.fillText(`Maior pont: ${localStorage.pontos}`, canvasWidth / 2 - 50, canvasHeight - 20);
 	ctx.fillStyle = "rgba(0, 0, 0, 0.0)";
 
 	// ctx.fillStyle = "red";
