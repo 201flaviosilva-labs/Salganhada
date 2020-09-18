@@ -1,8 +1,8 @@
 {
-  "name": "Nome",
+  "name": "salganhada",
   "version": "1.0.0",
   "description": "Descrição",
-  "main": "Inimigo.js",
+  "main": "./Script/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
