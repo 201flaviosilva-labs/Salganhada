@@ -1,6 +1,6 @@
 class Inimigo {
 	constructor() {
-		const tamanho = Math.floor(Math.random() * 10) + 10;
+		const tamanho = Math.floor(Math.random() * 10) + 20;
 		this.Width = tamanho;
 		this.Height = tamanho;
 		this.Y = 0;
@@ -13,8 +13,13 @@ class Inimigo {
 		} while (this.Y < 0);
 
 		this.sprite = new Image();
-		if (tamanho > 15) this.sprite.src = "../Assets/Bacalhao.png";
-		else this.sprite.src = "../Assets/Fininho.png";
+		if (tamanho > 25) {
+			if (this.Direction === "esquerda") this.sprite.src = "../Assets/BacalhaoEsq.png";
+			else this.sprite.src = "../Assets/Bacalhao.png";
+		} else {
+			if (this.Direction === "esquerda") this.sprite.src = "../Assets/FininhoEsq.png";
+			else this.sprite.src = "../Assets/Fininho.png";
+		}
 	}
 
 	mover() {
