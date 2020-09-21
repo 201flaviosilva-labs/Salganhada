@@ -3,15 +3,15 @@ for (let i = 0; i < localStorage.numJogadores; i++) jogadors.push(new Jogador(`J
 let camarao = new Camarao();
 let inimigosArr = [new Inimigo()];
 
+ctx.font = "18px monospace";
+
 window.onload = () => desenhar();
-setInterval(desenhar, 1000 / 24);
+setInterval(desenhar, 1);
+setInterval(logica, 1000 / 24);
 function desenhar() {
 	ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-	for (let i = 0; i < jogadors.length; i++) jogadors[i].mover();
-
-	ctx.font = "18px monospace";
-	// ctx.fillStyle = "rgb(0,0,255, 0.7)";
+	// Pontos
 	for (let i = 0; i < jogadors.length; i++) {
 		const pontos = jogadors[i].Pontos;
 		if (jogadors[i].nome === "Jogador1") {
@@ -28,23 +28,31 @@ function desenhar() {
 	ctx.fillText(`Maior pont: ${localStorage.pontos}`, canvasWidth / 2 - 50, canvasHeight - 20);
 	ctx.fillStyle = "rgba(0, 0, 0, 0.0)";
 
-	// ctx.fillStyle = "red";
+	// Inimigos
 	for (let i = 0; i < inimigosArr.length; i++) {
-		inimigosArr[i].mover();
-		if (inimigosArr[i].X < 0) inimigosArr.splice(i, 1);
 		ctx.fillRect(inimigosArr[i].X, inimigosArr[i].Y, inimigosArr[i].Width, inimigosArr[i].Height);
 		ctx.drawImage(inimigosArr[i].sprite, inimigosArr[i].X, inimigosArr[i].Y, inimigosArr[i].Width, inimigosArr[i].Height);
 	}
 
-	// ctx.fillStyle = "yellow";
+	// Camarão
 	ctx.fillRect(camarao.X, camarao.Y, camarao.Width, camarao.Height);
 	ctx.drawImage(camarao.sprite, camarao.X, camarao.Y, camarao.Width, camarao.Height);
 
-	// ctx.fillStyle = "white";
-
+	// Jogadores
 	for (let i = 0; i < jogadors.length; i++) {
 		ctx.fillRect(jogadors[i].X, jogadors[i].Y, jogadors[i].Width, jogadors[i].Height);
 		ctx.drawImage(jogadors[i].sprite, jogadors[i].X, jogadors[i].Y, jogadors[i].Width, jogadors[i].Height);
+	}
+}
+
+function logica() {
+	for (let i = 0; i < inimigosArr.length; i++) {
+		inimigosArr[i].mover();
+		if (inimigosArr[i].X < 0) inimigosArr.splice(i, 1);
+	}
+
+	for (let i = 0; i < jogadors.length; i++) {
+		jogadors[i].mover();
 		colisao(jogadors[i]);
 	}
 }
@@ -64,6 +72,7 @@ function colisao(jog) {
 			inimigosArr.splice(i, 1);
 			canvas.style.border = "1px solid red";
 			canvas.style.boxShadow = "0 0 20px red";
+			mudarCorIntervalo = setTimeout(mudarCorBorder, 1000);
 		}
 	}
 
@@ -80,12 +89,13 @@ function colisao(jog) {
 		camarao = new Camarao();
 		canvas.style.border = "1px solid yellow";
 		canvas.style.boxShadow = "0 0 20px yellow";
+		mudarCorIntervalo = setTimeout(mudarCorBorder, 1000);
 	}
 }
 
 setInterval(() => inimigosArr.push(new Inimigo()), 500);
 
-let mudarCorIntervalo = setTimeout(mudarCorBorder, 1000);
+let mudarCorIntervalo;
 function mudarCorBorder() {
 	canvas.style.border = "1px solid blue";
 	canvas.style.boxShadow = "0 0 20px blue";
