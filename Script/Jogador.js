@@ -1,4 +1,30 @@
 document.addEventListener("keydown", (e) => { for (let i = 0; i < jogadors.length; i++) jogadors[i].mudarDirecao(e) });
+let startCoordinates = { X: 0, Y: 0 };
+if (window.innerWidth < 1000) {
+	document.addEventListener("touchstart", (e) => {
+		startCoordinates.X = e.changedTouches[0].clientX;
+		startCoordinates.Y = e.changedTouches[0].clientY;
+	}, false);
+
+	document.addEventListener("touchmove", (e) => {
+		const endCoordinates = {
+			X: e.changedTouches[0].clientX,
+			Y: e.changedTouches[0].clientY
+		}
+		const xDifference = Math.abs(startCoordinates.X - endCoordinates.X);
+		const yDifference = Math.abs(startCoordinates.Y - endCoordinates.Y);
+
+		const event = { keyCode: 0 };
+		if (xDifference > 50) {
+			if (startCoordinates.X > endCoordinates.X) event.keyCode = 37;
+			else event.keyCode = 39;
+		} else if (yDifference > 50) {
+			if (startCoordinates.Y > endCoordinates.Y) event.keyCode = 38;
+			else event.keyCode = 40;
+		}
+		jogadors[0].mudarDirecao(event);
+	}, false);
+}
 class Jogador {
 	constructor(nome) {
 		this.nome = nome;
@@ -16,6 +42,7 @@ class Jogador {
 
 	mudarDirecao(e) {
 		const keyCode = e.keyCode;
+		console.log(e.keyCode);
 		// Jogador 1
 		if (this.nome === "Jogador1") {
 			if (keyCode === 65) this.Direcao = "Esquerda";
