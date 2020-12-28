@@ -1,5 +1,5 @@
 # Salganhada
 
-Descrição
+O grande jogo dos peixes
 
-[Jogar](https://salganhada.netlify.app)
+[Jogar](https://mangito.github.io/Salganhada_POC/)
