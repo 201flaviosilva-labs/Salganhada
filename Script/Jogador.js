@@ -42,7 +42,6 @@ class Jogador {
 
 	mudarDirecao(e) {
 		const keyCode = e.keyCode;
-		console.log(e.keyCode);
 		// Jogador 1
 		if (this.nome === "Jogador1") {
 			if (keyCode === 65) this.Direcao = "Esquerda";
