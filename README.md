@@ -1,5 +1,5 @@
 # Salganhada
 
-O grande jogo dos peixes
+Apanha todos os peixes amarelos
 
-[Jogar](https://mangito.github.io/Salganhada_POC/)
+[Jogar](https://mangito.github.io/Salganhada/)
