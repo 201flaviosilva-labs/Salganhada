@@ -1,12 +1,9 @@
 {
   "name": "salganhada",
   "version": "1.0.0",
-  "description": "Apanha os peixes todos",
+  "description": "Apanha todos os peixes amarelos!",
   "main": "./src/Script/main.js",
   "homepage": "https://mangito.github.io/Salganhada/",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mangito/Salganhada.git"
@@ -16,6 +13,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mangito/Salganhada/issues"
-  },
-  "homepage": "https://github.com/Mangito/Salganhada#readme"
+  }
 }
