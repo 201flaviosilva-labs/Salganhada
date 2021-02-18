@@ -1,4 +1,4 @@
-div.Demo {
+div.Beta {
   margin: 1px;
   padding: 2px 4px;
   position: fixed;
@@ -13,9 +13,6 @@ div.Demo {
 canvas {
   border: 1px solid green;
   box-shadow: 0 0 20px green;
-  background: url("../Assets/Aquarium.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   overflow: hidden;
   touch-action: none;
 }

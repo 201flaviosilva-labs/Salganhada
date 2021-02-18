@@ -11,7 +11,7 @@ p {
   color: white;
 }
 
-div.SelectionarJogadores {
+div.SelectPlayers {
   width: 50%;
   height: 50%;
   display: flex;
@@ -19,7 +19,7 @@ div.SelectionarJogadores {
   justify-content: center;
 }
 
-div.SelectionarJogadores div {
+div.SelectPlayers div {
   width: 100%;
   height: 100%;
   display: flex;
@@ -28,12 +28,12 @@ div.SelectionarJogadores div {
   justify-content: space-around;
 }
 
-div.SelectionarJogadores div img.Controlos {
+div.SelectPlayers div img.Controlos {
   width: 150px;
   height: 100px;
 }
 
-div.jogarBTNs {
+div.PlayBTNs {
   width: 50%;
   display: flex;
   justify-content: space-around;

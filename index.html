@@ -4,40 +4,40 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./Style/reset.css">
-	<link rel="stylesheet" href="./Style/style.css">
+	<link rel="stylesheet" href="./src/Style/reset.css">
+	<link rel="stylesheet" href="./src/Style/style.css">
 	<title>Salganhada</title>
 </head>
 
 <body>
 	<h1>Salganhada</h1>
-	<p>Apanha o máximo de Camarões</p>
-	<div class="SelectionarJogadores">
+
+	<p>Apanha o máximo de peixes amarelos</p>
+
+	<div class="SelectPlayers">
 		<div>
 			<h2>Jogador 1</h2>
-			<img src="./Assets/SardVermelha.png" alt="Sardinha Vermelha">
+			<img src="./Assets/Peixes/P1.png" alt="P1">
 			<img src="./Assets/WASD.png" alt="W A S D" class="Controlos">
 		</div>
 
 		<div>
 			<h2>Jogador 2</h2>
-			<img src="./Assets/SardVerde.png" alt="Sardinha Verde">
+			<img src="./Assets/Peixes/P2.png" alt="P2">
 			<img src="./Assets/Arrows.png" alt="↑ → ↓ ←" class="Controlos">
 		</div>
 	</div>
 
-	<div class="jogarBTNs">
-		<button onclick="addJogador(1)">1 Jogador</button>
-		<button onclick="addJogador(2)">2 Jogadores</button>
+	<div class="PlayBTNs">
+		<button onclick="addPlayer(1)">1 Jogador</button>
+		<button onclick="addPlayer(2)">2 Jogadores</button>
 	</div>
-	<!-- <a href="./Game.html">Começar</a> -->
 
-	<!-- script -->
 	<script>
-		function addJogador(n) {
-			if (n === 1) localStorage.numJogadores = 1;
-			else if (n === 2) localStorage.numJogadores = 2;
-			window.location.href = "./Game.html";
+		function addPlayer(n) {
+			if (n === 1) localStorage.numPlayers = 1;
+			else if (n === 2) localStorage.numPlayers = 2;
+			window.location.href = "./src/Game.html";
 		}
 	</script>
 </body>

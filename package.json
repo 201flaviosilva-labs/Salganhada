@@ -1,20 +1,21 @@
 {
   "name": "salganhada",
   "version": "1.0.0",
-  "description": "Descrição",
-  "main": "./Script/main.js",
+  "description": "Apanha os peixes todos",
+  "main": "./src/Script/main.js",
+  "homepage": "https://mangito.github.io/Salganhada/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/201flaviosilva/Nome.git"
+    "url": "git+https://github.com/Mangito/Salganhada.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/201flaviosilva/Nome/issues"
+    "url": "https://github.com/Mangito/Salganhada/issues"
   },
-  "homepage": "https://github.com/201flaviosilva/Nome#readme"
+  "homepage": "https://github.com/Mangito/Salganhada#readme"
 }
