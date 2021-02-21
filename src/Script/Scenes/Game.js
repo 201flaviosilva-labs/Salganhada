@@ -4,7 +4,7 @@ class Game extends Phaser.Scene {
 	}
 
 	preload() {
-		const assets = "../../../Salganhada/Assets/"; // Build
+		const assets = "https://mangito.github.io/Salganhada/Assets/"; // Build
 		// const assets = "../../../Assets/"; // Dev
 		this.load.image("Amarelo", assets + "Peixes/Amarelo.png"); // "Coin"
 
