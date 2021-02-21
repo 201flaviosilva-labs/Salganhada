@@ -4,7 +4,8 @@ class Game extends Phaser.Scene {
 	}
 
 	preload() {
-		const assets = "../../../Assets/"
+		const assets = "../../../Salganhada/Assets/"; // Build
+		// const assets = "../../../Assets/"; // Dev
 		this.load.image("Amarelo", assets + "Peixes/Amarelo.png"); // "Coin"
 
 		// Enemies
