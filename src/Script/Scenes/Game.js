@@ -4,20 +4,19 @@ class Game extends Phaser.Scene {
 	}
 
 	preload() {
-		const assets = "../../../"
-		this.load.image("Amarelo", assets + "Assets/Peixes/Amarelo.png"); // "Coin"
+		const assets = "../../../Assets/"
+		this.load.image("Amarelo", assets + "Peixes/Amarelo.png"); // "Coin"
 
 		// Enemies
-		this.load.image("Medusa", assets + "Assets/Peixes/Medusa.png");
-		this.load.image("Zebra", assets + "Assets/Peixes/Zebra.png");
+		this.load.image("Medusa", assets + "Peixes/Medusa.png");
+		this.load.image("Zebra", assets + "Peixes/Zebra.png");
 
 		// Player
-		this.load.image("P1", assets + "Assets/Peixes/P1.png");
-		this.load.image("P2", assets + "Assets/Peixes/P2.png");
+		this.load.image("P1", assets + "Peixes/P1.png");
+		this.load.image("P2", assets + "Peixes/P2.png");
 	}
 
 	create() {
-		console.log(localStorage.numPlayers);
 		const style = {
 			fontFamily: "'Press Start 2P'",
 			fontSize: 14,
@@ -27,6 +26,7 @@ class Game extends Phaser.Scene {
 			boundsAlignH: "center",
 			boundsAlignV: "middle",
 		};
+
 		this.bestPointsLabel = this.add.text(400, 600 - 20, localStorage.bestPoints, style).setOrigin(0.5);
 		this.p1Points = this.add.text(100, 20, 0, style).setOrigin(0.5);
 		if (localStorage.numPlayers == 2) this.p2Points = this.add.text(800 - 100, 20, 0, style).setOrigin(0.5);

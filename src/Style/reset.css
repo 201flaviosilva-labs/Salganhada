@@ -12,7 +12,6 @@ html,
 body {
   width: 100vw;
   min-height: 100vh;
-  overscroll-behavior: none;
 }
 
 body {
@@ -20,5 +19,4 @@ body {
   align-items: center;
   justify-content: center;
   background-color: black;
-  overflow: hidden;
 }
