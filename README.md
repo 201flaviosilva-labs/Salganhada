@@ -2,4 +2,4 @@
 
 Apanha todos os peixes amarelos
 
-[Jogar](https://mangito.github.io/Salganhada/)
+[Jogar](https://201flaviosilva-labs.github.io/Salganhada/)
